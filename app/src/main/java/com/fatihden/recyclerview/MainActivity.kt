@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.fatihden.recyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
 
         superKahramanListe = arrayListOf(superman, hulk, docterStrage, amerika)
+
+        val adapter = Adapter(superKahramanListe)
+        _binding.mainRcyclerView.layoutManager = LinearLayoutManager(this)
+        _binding.mainRcyclerView.adapter = adapter
 
     }
 
