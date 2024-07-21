@@ -27,7 +27,8 @@ class Adapter(val kahListe:ArrayList<SuperKahraman>) :
 
         holder.itemView.setOnClickListener{
             val intent = Intent(holder.itemView.context , MainActivity2::class.java )
-            intent.putExtra("tiklananRecyclerItem",kahListe[position])
+            Singleton.secilenKahramanSingleton = kahListe[position]
+            //intent.putExtra("tiklananRecyclerItem",kahListe[position])
             holder.itemView.context.startActivity(intent)
         }
 

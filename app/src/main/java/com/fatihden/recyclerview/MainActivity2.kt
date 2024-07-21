@@ -22,15 +22,25 @@ class MainActivity2 : AppCompatActivity() {
             insets
         }
 
-        val adapterdenGelenIntent = intent
+        //val adapterdenGelenIntent = intent
         //api : 33
         //adapterdenGelenIntent.getSerializableExtra("tiklananRecyclerItem",SuperKahraman::class.java)
         // daha eski api için geçerli
-        val secilenKahraman = adapterdenGelenIntent.getSerializableExtra("tiklananRecyclerItem") as SuperKahraman
-
+       /* val secilenKahraman = adapterdenGelenIntent.getSerializableExtra("tiklananRecyclerItem") as SuperKahraman
         _binding.imageView.setImageResource(secilenKahraman.gorsel)
         _binding.textView.text = secilenKahraman.isim
-        _binding.textView2.text = secilenKahraman.meslek
+        _binding.textView2.text = secilenKahraman.meslek*/
+
+
+        // Singleton Kullanarak :
+        val secilenKahraman = Singleton.secilenKahramanSingleton
+
+        secilenKahraman?.let{
+            _binding.imageView.setImageResource(secilenKahraman.gorsel)
+            _binding.textView.text = secilenKahraman.isim
+            _binding.textView2.text = secilenKahraman.meslek
+        }
+
 
 
 

@@ -1,7 +1,7 @@
 package com.fatihden.recyclerview
 
 object Singleton {
-    var secilenKahramanSingleton : SuperKahraman ? = null
+    var secilenKahramanSingleton : SuperKahraman? = null
 
 
 
