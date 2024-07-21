@@ -1,5 +1,6 @@
 package com.fatihden.recyclerview
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +24,16 @@ class Adapter(val kahListe:ArrayList<SuperKahraman>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.tvRecyclerView.text = kahListe[position].isim
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context , MainActivity2::class.java )
+            intent.putExtra("tiklananRecyclerItem",kahListe[position])
+            holder.itemView.context.startActivity(intent)
+        }
+
+
+
+
     }
 
 
